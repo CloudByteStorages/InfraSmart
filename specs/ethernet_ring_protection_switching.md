@@ -1,7 +1,5 @@
 # Ethernet Ring Protection Switching
 
-## Mentor bms@
-
 - ERPS networks can achieve sub-50ms failover. 
 - Imagine a large fibre-optic backbone such as a Metropolitan Area Network (MAN).
 - Where 99.9999% reliability is a requirement.
