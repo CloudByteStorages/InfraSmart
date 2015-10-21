@@ -8,25 +8,20 @@
 #### run iperf 
 
 - iperf -c 10.0.1.2
-
-------------------------------------------------------------
-Client connecting to 10.0.1.2, TCP port 5001
-TCP window size: 32.5 KByte (default)
-------------------------------------------------------------
-[  3] local 10.0.1.1 port 19238 connected with 10.0.1.2 port 5001
-[ ID] Interval       Transfer     Bandwidth
-[  3]  0.0-10.0 sec  3.91 GBytes  3.36 Gbits/sec
-
-- performance is bad
+  - Client connecting to 10.0.1.2, TCP port 5001
+  - TCP window size: 32.5 KByte (default)
+    - [  3] local 10.0.1.1 port 19238 connected with 10.0.1.2 port 5001
+    - [ ID] Interval       Transfer     Bandwidth
+    - [  3]  0.0-10.0 sec  3.91 GBytes  3.36 Gbits/sec
+  - performance is bad
 
 #### run flood ping latency:
 
 - sudo ping -f 10.0.1.2
-PING 10.0.1.2 (10.0.1.2): 56 data bytes
-.^C
---- 10.0.1.2 ping statistics ---
-41927 packets transmitted, 41926 packets received, 0.0% packet loss
-round-trip min/avg/max/stddev = 0.084/0.116/0.145/0.002 ms
+  - PING 10.0.1.2 (10.0.1.2): 56 data bytes
+  - 10.0.1.2 ping statistics
+    - 41927 packets transmitted, 41926 packets received, 0.0% packet loss
+    - round-trip min/avg/max/stddev = 0.084/0.116/0.145/0.002 ms
 
 - Any ideas on what's going on here? 
 - Testing 10G ix interfaces between the same two machines results in 9.39 Gbits/sec and flood ping latencies of 17 usec.
@@ -79,7 +74,7 @@ every 250us which is dangerously close to the 300us capacity of the queue itself
   -  0      0   -92    0     0K  8944K -      31   0:00   0.00% kernel{ixl1 que}
   - 11      0   -92    -     0K  1152K WAIT   -1   0:00   0.00% intr{irq290: ixl1:aq}
 
-With 10G ix interfaces and a throughput of ~9Gb/s, the CPU load is much lower:
+- With 10G ix interfaces and a throughput of ~9Gb/s, the CPU load is much lower:
 
   - 11      0   -92    -     0K  1152K WAIT    0   0:05   7.67% intr{irq274: ix0:que }
   -  0      0   -92    0     0K  8944K -      27   0:00   0.29% kernel{ix0 que}
