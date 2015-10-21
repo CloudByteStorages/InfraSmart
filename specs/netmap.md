@@ -6,7 +6,7 @@
 ### netmap pipes
 - shared memory packet transport channel
 
-## Details
+### details
 - for both userspace & kernel clients
 - vale - in-kernel
 - faster than sockets, bpf, tun/tap, native switches, pipes
