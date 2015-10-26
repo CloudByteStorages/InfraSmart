@@ -39,7 +39,20 @@
 
 #### iscsi sessions
 - collection of tcp connections between an initiator & target
-	- overcome
+	- overcome bandwidth limitations imposed by TCP window size
+	- utilize multiple CPUs in an SMP
+- connections of a session may traverse different physical interconnects
+	- aggregate bandwidth from multiple interconnects
+- must coordinate between multiple TCP connections
+
+#### Data Transfer Model
+- asymmetric
+	- single control channel
+		- control channel used to transfer commands, status, task management 
+	- multiple data channels
+- symmetric
+	- all channels identical
+
 
 #### iscsi locations @ freebsd
 - sys/modules/iscsi_initiator	-> just the Makefile
